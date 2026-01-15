@@ -3,6 +3,8 @@ import { ApiGatewayModule } from './api-gateway.module';
 import { ValidationPipe } from '@nestjs/common';
 import { ResponseInterceptor } from './common/interceptors/response.interceptor';
 import { GlobalHttpExceptionFilter } from './common/filters/http-exception.filter';
+import { LoggingInterceptor } from './common/interceptors/logging.inetrceptor';
+import { AppLogger } from 'libs/logger';
 
 async function bootstrap() {
   const app = await NestFactory.create(ApiGatewayModule);
@@ -18,7 +20,9 @@ async function bootstrap() {
     }),
   );
   app.useGlobalInterceptors(new ResponseInterceptor());
-  app.useGlobalFilters(new GlobalHttpExceptionFilter());
+  const logger = app.get(AppLogger);
+  app.useGlobalFilters(new GlobalHttpExceptionFilter(logger));
+  app.useGlobalInterceptors(new LoggingInterceptor(logger));
 
   await app.listen(process.env.port ?? 3000, () =>
     console.log('Api-Gateway Listening to port', process.env.port ?? 3000),

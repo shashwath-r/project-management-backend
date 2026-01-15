@@ -1,4 +1,10 @@
 {
   "extends": "./tsconfig.json",
+  // "compilerOptions": {
+  //   "paths": {
+  //     "libs/logger": ["libs/logger/src"],
+  //     "libs/logger/*": ["libs/logger/src/*"]
+  //   }
+  // },
   "exclude": ["node_modules", "test", "dist", "**/*spec.ts"]
 }
