@@ -1,10 +1,13 @@
 import { Module } from '@nestjs/common';
 import { OrgServiceController } from './org-service.controller';
-import { OrgServiceService } from './org-service.service';
+import { OrgService } from './org-service.service';
+import { SequelizeModule } from '@nestjs/sequelize';
+import { Organization } from './models/organization.model';
+import { Department } from './models/department.model';
 
 @Module({
-  imports: [],
+  imports: [SequelizeModule.forFeature([Organization, Department])],
   controllers: [OrgServiceController],
-  providers: [OrgServiceService],
+  providers: [OrgService],
 })
-export class OrgServiceModule {}
+export class OrgModule {}

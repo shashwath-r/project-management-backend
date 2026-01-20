@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common';
-import { OrgServiceService } from './org-service.service';
+import { OrgService } from './org-service.service';
 
 @Controller()
 export class OrgServiceController {
-  constructor(private readonly orgServiceService: OrgServiceService) {}
+  constructor(private readonly orgServiceService: OrgService) {}
 
   @Get()
   getHello(): string {
