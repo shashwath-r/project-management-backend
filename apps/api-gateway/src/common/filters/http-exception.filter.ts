@@ -6,7 +6,7 @@ import {
   HttpStatus,
 } from '@nestjs/common';
 import { Request, Response } from 'express';
-import { AppLogger } from 'libs/logger';
+import { AppLogger } from '@libs/logger';
 
 @Catch()
 export class GlobalHttpExceptionFilter implements ExceptionFilter {

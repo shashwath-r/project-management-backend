@@ -22,11 +22,14 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "libs/logger": [
-        "libs/logger/src"
+      "@libs/*": [
+        "libs/*/src"
       ],
-      "libs/logger/*": [
-        "libs/logger/src/*"
+      "@libs/database": [
+        "libs/database/src/index.ts"
+      ],
+      "@libs/logger": [
+        "libs/logger/src/index.ts"
       ]
     }
   }

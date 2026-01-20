@@ -1,10 +1,12 @@
+import 'dotenv/config';
+
 import { NestFactory } from '@nestjs/core';
 import { ApiGatewayModule } from './api-gateway.module';
 import { ValidationPipe } from '@nestjs/common';
 import { ResponseInterceptor } from './common/interceptors/response.interceptor';
 import { GlobalHttpExceptionFilter } from './common/filters/http-exception.filter';
 import { LoggingInterceptor } from './common/interceptors/logging.inetrceptor';
-import { AppLogger } from 'libs/logger';
+import { AppLogger } from '@libs/logger';
 
 async function bootstrap() {
   const app = await NestFactory.create(ApiGatewayModule);

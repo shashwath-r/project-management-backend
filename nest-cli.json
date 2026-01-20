@@ -22,6 +22,15 @@
         "tsConfigPath": "apps/auth-service/tsconfig.app.json"
       }
     },
+    "database": {
+      "type": "library",
+      "root": "libs/database",
+      "entryFile": "index",
+      "sourceRoot": "libs/database/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/database/tsconfig.lib.json"
+      }
+    },
     "logger": {
       "type": "library",
       "root": "libs/logger",
@@ -29,6 +38,15 @@
       "sourceRoot": "libs/logger/src",
       "compilerOptions": {
         "tsConfigPath": "libs/logger/tsconfig.lib.json"
+      }
+    },
+    "org-service": {
+      "type": "application",
+      "root": "apps/org-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/org-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/org-service/tsconfig.app.json"
       }
     }
   },
